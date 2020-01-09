@@ -5,4 +5,4 @@ steps:
     args: ["-h"]
 
 images: ["gcr.io/$PROJECT_ID/cdxgen"]
-tags: ["cloud-builders-community"]
+tags: ["google-custom-builders"]
