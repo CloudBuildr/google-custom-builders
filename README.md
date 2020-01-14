@@ -61,3 +61,11 @@ steps:
     - name: "gcr.io/$PROJECT_ID/cdxgen"
       args: ["--output", "bom.xml", "src"]
 ```
+
+### Updating the custom builders
+
+The custom builders gets cached and stored in the container registry that belongs to the project. As the tools change it may become necessary to update the builders in your registry. To update simply run `build docker image` step again.
+
+    ```
+    $ gcloud builds submit --config cloudbuild.yaml .
+    ```
