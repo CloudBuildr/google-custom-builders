@@ -47,5 +47,5 @@ if [ ! -z "$display_help" ]; then
 else
     mkdir -p ${report_dir}
     export PYTHONPATH=/usr/local/src:$PYTHONPATH:
-    /usr/local/src/scan --src ${src_dir} --type $src_type --out_dir ${report_dir} --convert
+    /usr/local/src/scan --src ${src_dir} --type $src_type --out_dir ${report_dir} --convert --no-error
 fi
