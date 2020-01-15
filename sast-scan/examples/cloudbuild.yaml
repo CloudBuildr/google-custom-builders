@@ -4,9 +4,13 @@ steps:
     args: ["--type", "python"]
 
   - name: "gcr.io/$PROJECT_ID/sast-scan"
-    id: "Scan java project"
+    id: "Scan java project passing additional env values"
     args: ["--type", "java"]
-
+    env:
+    - 'WORKSPACE=https://github.com/AppThreat/WebGoat/blob/$COMMIT_SHA'
+    - 'REPOSITORY_URL=https://github.com/AppThreat/WebGoat'
+    - 'COMMIT_SHA=$COMMIT_SHA'
+    - 'BRANCH_NAME=$BRANCH_NAME'
   - name: "gcr.io/$PROJECT_ID/sast-scan"
     id: "Scan java project inside a specific directory"
     args: ["--src", "java", "--type", "java", "--out_dir", "reports"]
